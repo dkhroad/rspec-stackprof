@@ -19,8 +19,8 @@ RSpec.configure do |config|
 
   config.around(:each) do |example|
     if ENV['RSPEC_PROFILE'] == 'each'
-      RSpec::StackProf.configuration.output_file = RSpec::StackProf::filename_for(example)
-      StackProf.run RSpec::StackProf.options { example.call }
+      RSpec::StackProf.configuration.out_file = RSpec::StackProf::filename_for(example)
+      StackProf.run(RSpec::StackProf.options) { example.call }
     else
       example.call
     end

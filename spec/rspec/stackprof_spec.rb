@@ -14,4 +14,12 @@ describe RSpec::StackProf do
     expect(RSpec::StackProf.options[:out]).to match(%r{tmp/stackprof_\d{5}_\d{10}.out})
   end
 
+  context "when output file extension is missing" do 
+    it "add one" do 
+      RSpec::StackProf.configuration.out_file = "foo"
+      expect(RSpec::StackProf.options[:out]).to match(%r{tmp/foo_\d{5}_\d{10}.out})
+
+    end
+  end
+
 end

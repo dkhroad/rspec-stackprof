@@ -7,7 +7,9 @@ module RSpec
       end
 
       def file_extension
-        File.extname(RSpec::StackProf.configuration.out_file)
+        ext = File.extname(RSpec::StackProf.configuration.out_file)
+        return  ".out" if ext.length == 0
+        return ext
       end
 
       def file_basename
