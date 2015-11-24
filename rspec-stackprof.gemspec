@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Profile your RSpec examples using stackprof gem}
   spec.description   = %q{Add profiling hooks to use stackprof gem in a RSpec suit}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.homepage      = "https://github.com/dkhroad/rspec-stackprof"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
