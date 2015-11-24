@@ -1,5 +1,5 @@
-module Rspec
-  class Stackprof
+module RSpec
+  class StackProf
     VERSION = "0.1.0"
   end
 end

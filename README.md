@@ -1,4 +1,4 @@
-# Rspec::Stackprof
+# RSpec::StackProf
 
 Integrates stackprof gem with your RSpec setup allowing you to profile your specs at example or suite level.
 

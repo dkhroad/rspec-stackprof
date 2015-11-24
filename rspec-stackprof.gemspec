@@ -5,12 +5,12 @@ require 'rspec/stackprof/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "rspec-stackprof"
-  spec.version       = Rspec::Stackprof::VERSION
+  spec.version       = RSpec::StackProf::VERSION
   spec.authors       = ["Devinder Khroad"]
   spec.email         = ["dkhroad@gmail.com"]
 
-  spec.summary       = %q{Profile your rspec example using stackprof gem}
-  spec.description   = %q{Add profiling hooks to use stackprof gem in RSpec suit}
+  spec.summary       = %q{Profile your RSpec examples using stackprof gem}
+  spec.description   = %q{Add profiling hooks to use stackprof gem in a RSpec suit}
   spec.homepage      = "TODO: Put your gem's website or public repo URL here."
   spec.license       = "MIT"
 
@@ -29,7 +29,10 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.10"
   spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency "rspec"
+  spec.add_development_dependency "rspec", "~> 3.0"
+  spec.add_development_dependency "pry-byebug"
+  spec.add_development_dependency "pry-doc"
+  spec.add_development_dependency "pry-stack_explorer"
   spec.add_runtime_dependency 'rspec', '~> 3.0'
   spec.add_runtime_dependency 'stackprof'
 end
