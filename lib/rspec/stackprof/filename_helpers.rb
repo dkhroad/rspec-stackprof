@@ -6,6 +6,10 @@ module RSpec
         RSpec::StackProf.configuration.out_dir
       end
 
+      def output_file
+        RSpec::StackProf.configuration.out_file
+      end
+
       def file_extension
         ext = File.extname(RSpec::StackProf.configuration.out_file)
         return  ".out" if ext.length == 0
@@ -14,6 +18,10 @@ module RSpec
 
       def file_basename
         File.basename(RSpec::StackProf.configuration.out_file,".*")
+      end
+
+      def file_dirname
+        File.dirname(RSpec::StackProf.configuration.out_file)
       end
 
       def path_for metadata
@@ -28,7 +36,8 @@ module RSpec
         "#{Process.pid}_#{Time.now.to_i}"
       end
 
-      def create_dir_if_missing dirname 
+      def create_missing_dirs
+        dirname = File.dirname(File.join(output_dir,output_file))
         FileUtils.mkdir_p(dirname)
       end
 
@@ -45,7 +54,7 @@ module RSpec
         File.join(
           path,
           description
-        ).gsub(/\s+/, '-') + ":" + line_number 
+        ).gsub(/\s+/, '_') + ":" + line_number 
       end
     end
   end

@@ -25,9 +25,10 @@ module RSpec
     end
 
     def self.options 
-      create_dir_if_missing configuration.out_dir
+      create_missing_dirs
       file=create_unique_file_name 
-      {out: File.join(configuration.out_dir,file)}.merge(configuration.to_h)
+      dirname = File.dirname(File.join(output_dir,output_file))
+      {out: File.join(dirname,file)}.merge(configuration.to_h)
     end
   end
 end

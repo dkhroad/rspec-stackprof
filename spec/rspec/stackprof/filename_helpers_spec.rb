@@ -28,14 +28,14 @@ describe RSpec::StackProf::FilenameHelpers do
 
         mdata = {
           example_group: { 
-            parent_example_group: nil,
-            description: 'some parent group description'
-          },
+          parent_example_group: nil,
+          description: 'some parent group description'
+        },
           line_number: 20,
           description: 'some description',
         }
         a_example =  OpenStruct.new(metadata: mdata) 
-        expect(DummyClass.new.filename_for(a_example)).to eq("some-parent-group-description/some-description:20")
+        expect(DummyClass.new.filename_for(a_example)).to eq("some-parent-group-description_some-description:20")
       end
 
     end
