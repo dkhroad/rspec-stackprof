@@ -35,7 +35,7 @@ describe RSpec::StackProf::FilenameHelpers do
           description: 'some description',
         }
         a_example =  OpenStruct.new(metadata: mdata) 
-        expect(DummyClass.new.filename_for(a_example)).to eq("some-parent-group-description_some-description:20")
+        expect(DummyClass.new.filename_for(a_example)).to eq("some_parent_group_description/some_description:20")
       end
 
     end

@@ -24,6 +24,10 @@ module RSpec
       yield(configuration)
     end
 
+    def self.reset
+      @configuration = nil
+    end
+
     def self.options 
       create_missing_dirs
       file=create_unique_file_name 

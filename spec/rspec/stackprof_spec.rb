@@ -6,13 +6,16 @@ describe RSpec::StackProf do
   end
 
   context ".options" do 
-    it 'returns valid options hash' do
-      expect(RSpec::StackProf.options).to include({
-        out_dir: 'tmp',
-        out_file: 'stackprof.out'
-      })
+    context "defaults" do 
+      before { RSpec::StackProf.reset }
+      it 'returns valid options hash with defaults' do
+        expect(RSpec::StackProf.options).to include({
+          out_dir: 'tmp',
+          out_file: 'stackprof.out'
+        })
 
-      expect(RSpec::StackProf.options[:out]).to match(%r{tmp/stackprof_#{Process.pid}_\d{10}.out})
+        expect(RSpec::StackProf.options[:out]).to match(%r{tmp/stackprof_#{Process.pid}_\d{10}.out})
+      end
     end
 
     context "when output file extension is missing" do 
